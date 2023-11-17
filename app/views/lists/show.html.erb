@@ -1,5 +1,9 @@
 
 <h1><%= @list.name %></h1>
+<% if @list.photo.attached?   %>
+<%= cl_image_tag("#{@list.photo.key}",
+      width: 400, height: 300, crop: :fill) %>
+      <% end %>
 <%@list.movies.each do |movie|%>
   <div class="d-inline-flex p-2">
     <div class="p-2">
