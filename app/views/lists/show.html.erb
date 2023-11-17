@@ -1,0 +1,16 @@
+
+<h1><%= @list.name %></h1>
+<%@list.movies.each do |movie|%>
+  <div class="d-inline-flex p-2">
+    <div class="p-2">
+      <div class="card" style="width: 18rem;">
+        <%= image_tag "#{movie.poster_url}", class:'card-img-top'%>
+          <div class="card-body">
+            <p class="card-text"><%= movie.title%></p>
+          </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+<%= link_to "Add moovie", new_list_bookmark_path(@list) %>
